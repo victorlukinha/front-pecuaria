@@ -57,9 +57,24 @@
                                                 <label class="custom-control-label" for="customCheck">Lembre de Mim </label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="index.html" onclick="sleep()" class="btn btn-primary btn-user btn-block">
                                             Entrar
                                         </a>
+                                        <script>
+                                            function sleep(ms) {
+                                                return new Promise(resolve => setTimeout(resolve, ms));
+                                            }
+
+                                            async function demo() {
+                                                for (let i = 0; i < 2; i++) {
+                                                    console.log(`Waiting ${i} seconds...`);
+                                                    await sleep(i * 1000);
+                                                }
+                                            }
+
+                                            demo();
+                                        </script>
+
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Entrar com Google
